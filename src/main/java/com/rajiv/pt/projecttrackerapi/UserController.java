@@ -31,8 +31,13 @@ public class UserController {
 	}
 	
 	@PostMapping("/user")
-	public User createUser(@Valid @RequestBody User user) {
-		User createdUser = userRepository.save(user);
+//	public User createUser(@Valid @RequestBody User user) {
+	public User createUser() {
+		User tempUser = new User();
+		tempUser.setUsername("rajivsahu10");
+		tempUser.setLastName("sahu");
+		tempUser.setFirstName("rajiv");
+		User createdUser = userRepository.save(tempUser);
 		return createdUser;
 	}
 	
